@@ -15,10 +15,10 @@ import org.usfirst.frc2509.Robot2017.OI;
 import org.usfirst.frc2509.Robot2017.Robot;
 import org.usfirst.frc2509.Robot2017.RobotMap;
 
+import com.ctre.CANTalon;
+
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
-
-import com.ctre.CANTalon;
 
 
 /**
