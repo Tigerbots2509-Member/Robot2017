@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class Sweeper extends Subsystem {
-	private final CANTalon MOTOR = RobotMap.SWEEP_MOTOR;
+	public final CANTalon MOTOR = RobotMap.SWEEP_MOTOR;
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
