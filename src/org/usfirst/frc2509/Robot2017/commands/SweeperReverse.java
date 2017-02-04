@@ -12,17 +12,17 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class SweeperForward extends Command {
+public class SweeperReverse extends Command {
 	private final CANTalon MOTOR = Robot.sweeper.MOTOR;
-    public SweeperForward() {
-        requires(Robot.sweeper);
+	private final Command Forward = new SweeperForward();
+    public SweeperReverse() {
+    	requires(Robot.sweeper);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	MOTOR.set(0.5);
+    	MOTOR.set(-0.5);
     }
-    
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
@@ -36,6 +36,7 @@ public class SweeperForward extends Command {
     // Called once after isFinished returns true
     protected void end() {
     	MOTOR.set(0);
+    	Forward.start();
     }
 
     // Called when another command which requires one or more of the same

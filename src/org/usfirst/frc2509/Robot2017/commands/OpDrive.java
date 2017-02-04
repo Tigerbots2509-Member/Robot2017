@@ -13,7 +13,6 @@ package org.usfirst.frc2509.Robot2017.commands;
 import org.usfirst.frc2509.Robot2017.OI;
 import org.usfirst.frc2509.Robot2017.Robot;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -21,7 +20,6 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class OpDrive extends Command {
-	protected Joystick DRIVE_STICK = Robot.oi.opStick;
 	protected OI OI = Robot.oi;
 	protected RobotDrive DRIVETRAIN = Robot.driveTrain.getDrive();
 	
