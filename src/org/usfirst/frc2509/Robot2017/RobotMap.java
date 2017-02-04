@@ -60,7 +60,7 @@ public class RobotMap {
         SWEEP_MOTOR = new CANTalon(5);
         LiveWindow.addActuator("Sweeper", "Motor", (CANTalon) SWEEP_MOTOR);
         
-        SHOOT_MOTOR = new CANTalon(6);
+        SHOOT_MOTOR = new CANTalon(7);
         LiveWindow.addActuator("Shooter", "Motor", (CANTalon) SHOOT_MOTOR);
         
         SHOOT_ENCODER = new Encoder(0, 1, false, EncodingType.k4X);
@@ -68,10 +68,10 @@ public class RobotMap {
         SHOOT_ENCODER.setDistancePerPulse(1.0);
         SHOOT_ENCODER.setPIDSourceType(PIDSourceType.kRate);
         
-        SHOOT_KICKER = new CANTalon(7);
+        SHOOT_KICKER = new CANTalon(8);
         LiveWindow.addActuator("Shooter", "Kicker", SHOOT_KICKER);
         
-        CLIMB_MOTOR = new CANTalon(8);
+        CLIMB_MOTOR = new CANTalon(6);
         LiveWindow.addActuator("Climb", "Motor", CLIMB_MOTOR);
 
         FRONT_CAM = CameraServer.getInstance().startAutomaticCapture();

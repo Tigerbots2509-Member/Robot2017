@@ -11,9 +11,9 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class Shooter extends Subsystem {
-	private final CANTalon SHOOT = RobotMap.SHOOT_MOTOR;
-	private final CANTalon KICKER = RobotMap.SHOOT_KICKER;
-	private final Encoder ENCODER = RobotMap.SHOOT_ENCODER;
+	public final CANTalon SHOOT = RobotMap.SHOOT_MOTOR;
+	public final CANTalon KICKER = RobotMap.SHOOT_KICKER;
+	public final Encoder ENCODER = RobotMap.SHOOT_ENCODER;
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
