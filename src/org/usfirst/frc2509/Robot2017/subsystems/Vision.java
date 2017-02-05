@@ -12,16 +12,11 @@
 package org.usfirst.frc2509.Robot2017.subsystems;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
-import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfPoint;
-import org.opencv.core.Point;
-import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
 import org.opencv.core.Size;
-import org.opencv.imgproc.Imgproc;
 import org.usfirst.frc2509.Robot2017.RobotMap;
 
 import edu.wpi.cscore.CvSink;
@@ -29,7 +24,6 @@ import edu.wpi.cscore.CvSource;
 import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 /**
@@ -83,44 +77,6 @@ public class Vision extends Subsystem {
 	
     public void initDefaultCommand() {
     }
-    public void Filter(){
-    	new Thread(()->{
-    		contours.clear();
-    		CVSINK.grabFrame(SOURCE);
-    		Imgproc.cvtColor(SOURCE, HSV, Imgproc.COLOR_BGR2RGB);
-    		Imgproc.threshold(HSV, BINARY, 180, 200, Imgproc.THRESH_BINARY);
-    		Imgproc.cvtColor(BINARY, THRESH, Imgproc.COLOR_BGR2GRAY);
-            Imgproc.findContours(THRESH, contours, HEIRARCHY, Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_SIMPLE);
-            for(MatOfPoint mop :contours){
-    			Rect rec = Imgproc.boundingRect(mop);
-    			Imgproc.rectangle(SOURCE, rec.br(), rec.tl(), RED);
-    		}
-    		for(Iterator<MatOfPoint> iterator = contours.iterator();iterator.hasNext();){
-    			MatOfPoint matOfPoint = (MatOfPoint) iterator.next();
-    			Rect rec = Imgproc.boundingRect(matOfPoint);
-    			if( rec.height < 15 || rec.width < 15){
-    				iterator.remove();
-    			continue;
-    			}
-    			float aspect = (float)rec.width/(float)rec.height;
-    			if(aspect <0.35||aspect>0.45){
-    				iterator.remove();
-    				
-    			}
-    			SmartDashboard.putInt("Contours", contours.size());
-    			SmartDashboard.putInt("Width", rec.width);
-    		}
-    		if(contours.size()==2){
-    			Rect rec = Imgproc.boundingRect(contours.get(0));
-    			Point center = new Point(rec.br().x-rec.width / 2.0 - 15,rec.br().y - rec.height / 2.0);
-    			Point centerw = new Point(rec.br().x-rec.width / 2.0 - 15,rec.br().y - rec.height / 2.0 - 20);
-    			SmartDashboard.putString("Bottom Right:", ""+(Point)rec.br());
-    			SmartDashboard.putString("Top Left", ""+(Point)rec.tl());
-    			Imgproc.putText(SOURCE, ""+(Point)rec.br(), center, Core.FONT_HERSHEY_PLAIN, 1, BLACK);
-    			Imgproc.putText(SOURCE, ""+(Point)rec.tl(), centerw, Core.FONT_HERSHEY_PLAIN, 1, BLACK);
-    		}
-    		OUTPUT_STREAM.putFrame(SOURCE);
-    	}).start();
-    }
+    
 }
 
