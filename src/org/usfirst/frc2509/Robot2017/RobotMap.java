@@ -6,6 +6,7 @@ package org.usfirst.frc2509.Robot2017;
 import com.ctre.CANTalon;
 
 import edu.wpi.cscore.UsbCamera;
+import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 import edu.wpi.first.wpilibj.Encoder;
@@ -24,6 +25,7 @@ public class RobotMap {
     public static CANTalon DT_RIGHTFRONT;
     public static CANTalon DT_LEFTREAR;
     public static CANTalon DT_RIGHTREAR;
+    public static AnalogGyro GYRO;
     public static RobotDrive DRIVETRAIN;
     public static CANTalon SWEEP_MOTOR;
     public static CANTalon SHOOT_MOTOR;
@@ -46,6 +48,9 @@ public class RobotMap {
         DT_RIGHTREAR = new CANTalon(3);
         LiveWindow.addActuator("DriveTrain", "DT_RIGHTREAER", DT_RIGHTREAR);
         
+        GYRO = new AnalogGyro(0);
+        LiveWindow.addSensor("Gyro", 0, GYRO);
+                
         DRIVETRAIN = new RobotDrive(DT_LEFTFRONT, DT_LEFTREAR,
               DT_RIGHTFRONT, DT_RIGHTREAR);
         

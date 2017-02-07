@@ -14,10 +14,13 @@ package org.usfirst.frc2509.Robot2017.subsystems;
 import org.usfirst.frc2509.Robot2017.OI;
 import org.usfirst.frc2509.Robot2017.Robot;
 import org.usfirst.frc2509.Robot2017.RobotMap;
+import org.usfirst.frc2509.Robot2017.commands.OpDrive;
 
 import com.ctre.CANTalon;
 
+import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 
@@ -30,15 +33,16 @@ public class DriveTrain extends Subsystem {
     private final CANTalon RIGHT_FRONT = RobotMap.DT_RIGHTFRONT;
     private final CANTalon LEFT_REAR = RobotMap.DT_LEFTREAR;
     private final CANTalon RIGHT_REAR = RobotMap.DT_RIGHTREAR;
+    public final AnalogGyro GYRO = RobotMap.GYRO;
     private final RobotDrive DRIVETRAIN = RobotMap.DRIVETRAIN;
-    private final OI OI = Robot.oi;
+    private Command OpControl = new OpDrive();
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
     public void initDefaultCommand() {
+    	OpControl.start();
     }
-    
     
     public RobotDrive getDrive(){
     	return DRIVETRAIN;
@@ -54,6 +58,9 @@ public class DriveTrain extends Subsystem {
     }
     public CANTalon getRightRear(){
     	return RIGHT_REAR;
+    }
+    public AnalogGyro getGyro(){
+    	return GYRO;
     }
 }
 
