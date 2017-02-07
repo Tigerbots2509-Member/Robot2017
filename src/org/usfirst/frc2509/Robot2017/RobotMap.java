@@ -4,6 +4,7 @@
 package org.usfirst.frc2509.Robot2017;
 
 import com.ctre.CANTalon;
+import com.ctre.CANTalon.FeedbackDevice;
 
 import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.wpilibj.AnalogGyro;
@@ -13,6 +14,7 @@ import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.PIDSourceType;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -66,7 +68,17 @@ public class RobotMap {
         LiveWindow.addActuator("Sweeper", "Motor", (CANTalon) SWEEP_MOTOR);
         
         SHOOT_MOTOR = new CANTalon(7);
+        SHOOT_MOTOR.setFeedbackDevice(FeedbackDevice.CtreMagEncoder_Relative);
+        SHOOT_MOTOR.reverseSensor(false);
+        SHOOT_MOTOR.configNominalOutputVoltage(+0.0f, -0.0f);
+        SHOOT_MOTOR.configPeakOutputVoltage(+12.0f, -12.0f);
+        SHOOT_MOTOR.setProfile(0); 
+        //SHOOT_MOTOR.setF();
+        //SHOOT_MOTOR.setP();
+        //SHOOT_MOTOR.setI();
+        //SHOOT_MOTOR.setD();
         LiveWindow.addActuator("Shooter", "Motor", (CANTalon) SHOOT_MOTOR);
+        
         
         SHOOT_ENCODER = new Encoder(0, 1, false, EncodingType.k4X);
         LiveWindow.addSensor("Shooter", "Encoder", SHOOT_ENCODER);
