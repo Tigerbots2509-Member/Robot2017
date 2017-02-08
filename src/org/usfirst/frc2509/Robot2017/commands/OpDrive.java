@@ -20,8 +20,8 @@ import edu.wpi.first.wpilibj.command.Command;
  *@author Nate
  */
 public class OpDrive extends Command {
-	protected OI OI = Robot.oi;
-	protected RobotDrive DRIVETRAIN = Robot.driveTrain.getDrive();
+	private OI OI = Robot.oi;
+	private RobotDrive DRIVETRAIN = Robot.driveTrain.getDrive();
 	
     public OpDrive() {
         requires(Robot.driveTrain);

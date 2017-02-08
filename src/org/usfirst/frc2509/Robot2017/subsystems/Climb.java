@@ -22,7 +22,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class Climb extends Subsystem {
-    private final CANTalon MOTOR = RobotMap.CLIMB_MOTOR;
+    private final CANTalon MOTOR = RobotMap.tenzingNorgay;
 
 
 

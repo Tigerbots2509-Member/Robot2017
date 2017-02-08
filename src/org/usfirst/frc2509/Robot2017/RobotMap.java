@@ -32,7 +32,7 @@ public class RobotMap {
     public static CANTalon SHOOT_MOTOR;
     public static Encoder SHOOT_ENCODER;
     public static CANTalon SHOOT_KICKER;
-    public static CANTalon CLIMB_MOTOR;
+    public static CANTalon tenzingNorgay;
 
     public static UsbCamera FRONT_CAM;
 
@@ -60,8 +60,8 @@ public class RobotMap {
         DRIVETRAIN.setSensitivity(1.0);
         DRIVETRAIN.setMaxOutput(1.0);
 
-        DRIVETRAIN.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
-        DRIVETRAIN.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+        DRIVETRAIN.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
+        DRIVETRAIN.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
         
         SWEEP_MOTOR = new CANTalon(5);
         LiveWindow.addActuator("Sweeper", "Motor", (CANTalon) SWEEP_MOTOR);
@@ -89,8 +89,8 @@ public class RobotMap {
         SHOOT_KICKER = new CANTalon(8);
         LiveWindow.addActuator("Shooter", "Kicker", SHOOT_KICKER);
         
-        CLIMB_MOTOR = new CANTalon(6);
-        LiveWindow.addActuator("Climb", "Motor", CLIMB_MOTOR);
+        tenzingNorgay = new CANTalon(6);
+        LiveWindow.addActuator("Climb", "Motor", tenzingNorgay);
 
         FRONT_CAM = CameraServer.getInstance().startAutomaticCapture();
     }

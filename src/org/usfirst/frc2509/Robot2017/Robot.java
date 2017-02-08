@@ -25,6 +25,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -125,7 +126,9 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
     	Scheduler.getInstance().run();
   //  	RobotMap.DRIVETRAIN.mecanumDrive_Cartesian(oi.getScaledX(), oi.getScaledY(), oi.getScaledZ(), 0);
-    	
+
+        SmartDashboard.putDouble("Encoder", RobotMap.SHOOT_MOTOR.getEncVelocity());
+        SmartDashboard.putInt("POV", OpStick.getPOV());
     }
 
     /**
@@ -133,5 +136,6 @@ public class Robot extends IterativeRobot {
      */
     public void testPeriodic() {
         LiveWindow.run();
+        opDrive.start();
     }
 }
