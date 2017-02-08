@@ -17,7 +17,7 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ *@author Nate
  */
 public class OpDrive extends Command {
 	protected OI OI = Robot.oi;

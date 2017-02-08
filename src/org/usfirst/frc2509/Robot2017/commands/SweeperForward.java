@@ -3,14 +3,14 @@
  */
 package org.usfirst.frc2509.Robot2017.commands;
 
-import org.usfirst.frc2509.Robot2017.Robot;
-
 import com.ctre.CANTalon;
+
+import org.usfirst.frc2509.Robot2017.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ *@author Nate
  */
 public class SweeperForward extends Command {
 	private final CANTalon MOTOR = Robot.sweeper.MOTOR;

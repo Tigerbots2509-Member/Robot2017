@@ -14,7 +14,6 @@ import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.PIDSourceType;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -78,6 +77,8 @@ public class RobotMap {
         //SHOOT_MOTOR.setI();
         //SHOOT_MOTOR.setD();
         LiveWindow.addActuator("Shooter", "Motor", (CANTalon) SHOOT_MOTOR);
+
+        
         
         
         SHOOT_ENCODER = new Encoder(0, 1, false, EncodingType.k4X);
