@@ -1,29 +1,28 @@
-package org.usfirst.frc2509.Robot2017.commands;
+package org.usfirst.frc2509.Robot.commands;
 
-import org.usfirst.frc2509.Robot2017.Robot;
+import com.ctre.CANTalon;
 
-import edu.wpi.first.wpilibj.Joystick;
+import org.usfirst.frc2509.Robot.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ * @author Nate
  */
-public class GyroTurn extends Command {
-	private Command OpDrive = new OpDrive();
-	private Joystick stick = Robot.oi.getOpStick();
-    public GyroTurn() {
-    	
+public class ShooterRun extends Command {
+	private final CANTalon MOTOR = Robot.shooter.SHOOT;
+    public ShooterRun() {
+        // Use requires() here to declare subsystem dependencies
+        // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	MOTOR.set(0.75);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(stick.getPOV()==0){
-    		
-    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -33,10 +32,12 @@ public class GyroTurn extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	MOTOR.set(0.0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	end();
     }
 }

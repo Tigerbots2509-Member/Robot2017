@@ -9,16 +9,16 @@
 // it from being updated in the future.
 
 
-package org.usfirst.frc2509.Robot2017;
+package org.usfirst.frc2509.Robot;
 
-import org.usfirst.frc2509.Robot2017.commands.AutonomousCommand;
-import org.usfirst.frc2509.Robot2017.commands.OpDrive;
-import org.usfirst.frc2509.Robot2017.commands.SweeperForward;
-import org.usfirst.frc2509.Robot2017.subsystems.Climb;
-import org.usfirst.frc2509.Robot2017.subsystems.DriveTrain;
-import org.usfirst.frc2509.Robot2017.subsystems.Shooter;
-import org.usfirst.frc2509.Robot2017.subsystems.Sweeper;
-import org.usfirst.frc2509.Robot2017.subsystems.Vision;
+import org.usfirst.frc2509.Robot.commands.AutonomousCommand;
+import org.usfirst.frc2509.Robot.commands.OpDrive;
+import org.usfirst.frc2509.Robot.commands.SweeperForward;
+import org.usfirst.frc2509.Robot.subsystems.Climb;
+import org.usfirst.frc2509.Robot.subsystems.DriveTrain;
+import org.usfirst.frc2509.Robot.subsystems.Shooter;
+import org.usfirst.frc2509.Robot.subsystems.Sweeper;
+import org.usfirst.frc2509.Robot.subsystems.Vision;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;

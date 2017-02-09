@@ -1,28 +1,28 @@
 /**
  * @author Mason
  */
-package org.usfirst.frc2509.Robot2017.commands;
+package org.usfirst.frc2509.Robot.commands;
 
 import com.ctre.CANTalon;
 
-import org.usfirst.frc2509.Robot2017.Robot;
+import org.usfirst.frc2509.Robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *@author Nate
  */
-public class SweeperReverse extends Command {
+public class SweeperForward extends Command {
 	private final CANTalon MOTOR = Robot.sweeper.MOTOR;
-	private final Command Forward = new SweeperForward();
-    public SweeperReverse() {
-    	requires(Robot.sweeper);
+    public SweeperForward() {
+        requires(Robot.sweeper);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	MOTOR.set(-0.5);
+    	MOTOR.set(0.5);
     }
+    
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
@@ -36,7 +36,6 @@ public class SweeperReverse extends Command {
     // Called once after isFinished returns true
     protected void end() {
     	MOTOR.set(0);
-    	Forward.start();
     }
 
     // Called when another command which requires one or more of the same

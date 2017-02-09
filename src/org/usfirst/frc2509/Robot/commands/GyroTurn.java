@@ -1,19 +1,18 @@
-package org.usfirst.frc2509.Robot2017.commands;
+package org.usfirst.frc2509.Robot.commands;
 
-import org.usfirst.frc2509.Robot2017.RobotMap;
+import org.usfirst.frc2509.Robot.Robot;
 
-import com.ctre.CANTalon;
-
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 
-//This took Alex and Mason 3hrs to do, and it would have taken Nate 5 minutes. This should tell you out
-
-
-public class climbUp extends Command {
-	private CANTalon motor = RobotMap.tenzingNorgay;
-    public climbUp() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+/**
+ *
+ */
+public class GyroTurn extends Command {
+	private Command OpDrive = new OpDrive();
+	private Joystick stick = Robot.oi.getOpStick();
+    public GyroTurn() {
+    	
     }
 
     // Called just before this Command runs the first time
@@ -22,7 +21,9 @@ public class climbUp extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	motor.set(0.5);
+    	if(stick.getPOV()==0){
+    		
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -32,12 +33,10 @@ public class climbUp extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	motor.set(0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	end();
     }
 }

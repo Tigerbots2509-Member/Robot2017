@@ -9,7 +9,7 @@
 // it from being updated in the future.
 
 
-package org.usfirst.frc2509.Robot2017.subsystems;
+package org.usfirst.frc2509.Robot.subsystems;
 
 import java.util.ArrayList;
 
@@ -17,7 +17,7 @@ import org.opencv.core.Mat;
 import org.opencv.core.MatOfPoint;
 import org.opencv.core.Scalar;
 import org.opencv.core.Size;
-import org.usfirst.frc2509.Robot2017.RobotMap;
+import org.usfirst.frc2509.Robot.RobotMap;
 
 import edu.wpi.cscore.CvSink;
 import edu.wpi.cscore.CvSource;

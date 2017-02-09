@@ -1,8 +1,8 @@
-package org.usfirst.frc2509.Robot2017.subsystems;
-
-import org.usfirst.frc2509.Robot2017.RobotMap;
+package org.usfirst.frc2509.Robot.subsystems;
 
 import com.ctre.CANTalon;
+
+import org.usfirst.frc2509.Robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 

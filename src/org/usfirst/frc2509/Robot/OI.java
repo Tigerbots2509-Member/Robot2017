@@ -9,16 +9,16 @@
 // it from being updated in the future.
 
 
-package org.usfirst.frc2509.Robot2017;
+package org.usfirst.frc2509.Robot;
 
-
-import org.usfirst.frc2509.Robot2017.commands.OpDrive;
-import org.usfirst.frc2509.Robot2017.commands.ShooterRun;
-import org.usfirst.frc2509.Robot2017.commands.SweeperForward;
-import org.usfirst.frc2509.Robot2017.commands.SweeperReverse;
-import org.usfirst.frc2509.Robot2017.commands.climbUp;
 
 import com.ctre.CANTalon;
+
+import org.usfirst.frc2509.Robot.commands.ClimbUp;
+import org.usfirst.frc2509.Robot.commands.OpDrive;
+import org.usfirst.frc2509.Robot.commands.ShooterRun;
+import org.usfirst.frc2509.Robot.commands.SweeperForward;
+import org.usfirst.frc2509.Robot.commands.SweeperReverse;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -55,7 +55,7 @@ public class OI {
         Shoot.whileHeld(new ShooterRun());
         SmartDashboard.putData("Shooter Start", new ShooterRun());
         Climb = new JoystickButton(opStick, 2);
-        Climb.whileHeld(new climbUp());
+        Climb.whileHeld(new ClimbUp());
         
   
 	}

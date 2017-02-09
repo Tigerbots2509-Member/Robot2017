@@ -1,7 +1,7 @@
 /**
  * @author Tigerbots
  */
-package org.usfirst.frc2509.Robot2017;
+package org.usfirst.frc2509.Robot;
 
 import com.ctre.CANTalon;
 import com.ctre.CANTalon.FeedbackDevice;

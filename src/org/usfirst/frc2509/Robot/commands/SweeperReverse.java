@@ -1,24 +1,27 @@
-package org.usfirst.frc2509.Robot2017.commands;
+/**
+ * @author Mason
+ */
+package org.usfirst.frc2509.Robot.commands;
 
 import com.ctre.CANTalon;
 
-import org.usfirst.frc2509.Robot2017.Robot;
+import org.usfirst.frc2509.Robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- * @author Nate
+ *@author Nate
  */
-public class ShooterRun extends Command {
-	private final CANTalon MOTOR = Robot.shooter.SHOOT;
-    public ShooterRun() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+public class SweeperReverse extends Command {
+	private final CANTalon MOTOR = Robot.sweeper.MOTOR;
+	private final Command Forward = new SweeperForward();
+    public SweeperReverse() {
+    	requires(Robot.sweeper);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	MOTOR.set(0.75);
+    	MOTOR.set(-0.5);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -32,7 +35,8 @@ public class ShooterRun extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	MOTOR.set(0.0);
+    	MOTOR.set(0);
+    	Forward.start();
     }
 
     // Called when another command which requires one or more of the same
