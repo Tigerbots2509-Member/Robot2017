@@ -1,18 +1,15 @@
-package org.usfirst.frc2509.Robot.commands;
+package org.usfirst.frc.team2509.robot.commands;
 
-import org.usfirst.frc2509.Robot.Robot;
-
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class GyroTurn extends Command {
-	private Command OpDrive = new OpDrive();
-	private Joystick stick = Robot.oi.getOpStick();
-    public GyroTurn() {
-    	
+public class Red3 extends Command {
+
+    public Red3() {
+        // Use requires() here to declare subsystem dependencies
+        // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
@@ -21,9 +18,6 @@ public class GyroTurn extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(stick.getPOV()==0){
-    		
-    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -1,28 +1,20 @@
-/**
- * @author Mason
- */
-package org.usfirst.frc2509.Robot.commands;
-
-import com.ctre.CANTalon;
-
-import org.usfirst.frc2509.Robot.Robot;
+package org.usfirst.frc.team2509.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *@author Nate
+ *
  */
-public class SweeperForward extends Command {
-	private final CANTalon MOTOR = Robot.sweeper.MOTOR;
-    public SweeperForward() {
-        requires(Robot.sweeper);
+public class DefaultAuto extends Command {
+
+    public DefaultAuto() {
+        // Use requires() here to declare subsystem dependencies
+        // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	MOTOR.set(0.5);
     }
-    
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
@@ -35,12 +27,10 @@ public class SweeperForward extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	MOTOR.set(0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	end();
     }
 }
